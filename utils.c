@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * printing_words - this fun print words
- * @look: look is used to print character
+ * printing_words - this fun print words and sting
+ * @look: look is used to print character and string
  *
  * Return: print returned words
  */
