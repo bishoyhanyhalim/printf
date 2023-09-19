@@ -75,8 +75,17 @@ int nice_int(va_list boxs)
 	int sum_numbers = va_arg(boxs, int);
 	char buffer[1024];
 	int all = 0;
+	char zero;
 	int word_write = 0;
 	unsigned int collect_numbers;
+
+	if (sum_numbers == 0)
+		word_write += printing_words(zero = sum_numbers + '0');
+
+	if (sum_numbers > 0)
+	{
+		collect_numbers = sum_numbers;
+	}
 
 	if (sum_numbers < 0)
 	{
@@ -85,7 +94,9 @@ int nice_int(va_list boxs)
 		collect_numbers = -sum_numbers;
 	}
 	else
-	collect_numbers = sum_numbers;
+	{
+		collect_numbers = sum_numbers;
+	}
 
 	while (collect_numbers > 0)
 	{
