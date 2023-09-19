@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 /**
- * struct home - this for struct for print
+ * struct home - this for struct for print word
  * @book: for printing the home struct
  * @take: this a function for the struct
  *
