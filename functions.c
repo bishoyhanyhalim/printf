@@ -2,7 +2,7 @@
 
 /**
  * nice_str - fun to printing string
- * @boxs: this the list argment
+ * @boxs: this the list argment str
  *
  * Return: str word printing
  */
