@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - this is function to printing
+ * _printf - this is function to printing word
  * @format: format for fun to print
  *
  * Return: return words that is print
