@@ -6,6 +6,6 @@ print
 
 
 task one
-print
+printf
 1- iniger
 2- digit
