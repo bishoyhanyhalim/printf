@@ -1,4 +1,3 @@
-lsdkjfs
 #include "main.h"
 
 /**
