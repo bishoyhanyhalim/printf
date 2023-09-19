@@ -1,35 +1,49 @@
 #include "main.h"
 
 /**
- * look_for_str - fun to printing string
+ * nice_str - fun to printing string
  * @boxs: this the list argment
  *
  * Return: str word printing
  */
 
-int look_for_str(va_list boxs)
+int nice_str(va_list boxs)
 {
+	char *word_print = va_arg(boxs, char *);
+
+	int sum_number;
 	int word_write = 0;
 
-	char *str = va_arg(boxs, char *);
-
-	while (*str)
+	if (word_print == NULL)
 	{
-		word_write += printing_words(*str);
-		str++;
+		char no_string[] = "(null)";
+
+		for (sum_number = 0; no_string[sum_number]; sum_number++)
+		{
+			word_write += printing_words(no_string[sum_number]);
+		}
+	}
+	else
+	{
+		while (*word_print)
+		{
+			word_write += printing_words(*word_print);
+			word_print++;
+		}
 	}
 
 	return (word_write);
 }
 
+
 /**
- * look_for_char - fun to printing character
+ * nice_char - fun to printing character
  * @boxs: this the list argment
  *
  * Return: char word printing
  */
 
-int look_for_char(va_list boxs)
+int nice_char(va_list boxs)
 {
 	char single = va_arg(boxs, int);
 
@@ -37,44 +51,47 @@ int look_for_char(va_list boxs)
 }
 
 /**
- * look_for_percent - fun to printing percent
+ * nice_percent - fun to printing percent
  * @boxs: this the list argment
  *
  * Return: percent word printing
  */
 
-int look_for_percent(va_list boxs)
+int nice_percent(va_list boxs)
 {
 	(void)boxs;
 	return (printing_words('%'));
 }
 
 /**
- * look_for_int - fun to printing integer
+ * nice_int - fun to printing integer
  * @boxs: this the list argment
  *
  * Return: int word printing
  */
 
-int look_for_int(va_list boxs)
+int nice_int(va_list boxs)
 {
 	int sum_numbers = va_arg(boxs, int);
 	char buffer[1024];
 	int all = 0;
 	int word_write = 0;
+	unsigned int collect_numbers;
 
 	if (sum_numbers < 0)
 	{
 		word_write += printing_words('-');
 
-		sum_numbers = -sum_numbers;
+		collect_numbers = -sum_numbers;
 	}
+	else
+	collect_numbers = sum_numbers;
 
-	while (sum_numbers > 0)
+	while (collect_numbers > 0)
 	{
-		buffer[all++] = '0' + (sum_numbers % 10);
+		buffer[all++] = '0' + (collect_numbers % 10);
 
-		sum_numbers /= 10;
+		collect_numbers /= 10;
 	}
 
 	for (all = all - 1; all >= 0; all--)
