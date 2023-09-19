@@ -1,8 +1,8 @@
 task zero
 print 
-1- character
-2- string
-3- precente
+1- first thing we did is character
+2- second thing we did is string
+3- third  thing we did is precente
 
 
 task one
